@@ -48,18 +48,28 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ## Purpose: ${data.description}
+  ## Table of Contents:
+  [Description](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#description)<br>
+  [License](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#license)<br>
+  [Usage Instructions](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#how-to-use)<br>
+  [Installation](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#installation)<br>
+  [Reporting](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#reporting)<br>
+  [Contributing](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#contributing)<br>
+  [Contributers](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#contributers)<br>
+  [Testing](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#testing)<br>
+  [Questions](https://github.com/heyitsmejadah/read-me-generator/edit/main/README.md#questions)<br>
+  ## Description: ${data.description}
   ## License: ${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
   ${renderLicenseLink(data.license)}
-  ## How To Use: ${data.usage}
-  ## How To Install: ${data.installation}
-  ## How To Report Issues ${data.reporting}
-  ## How To Contribute: ${data.contributing}
+  ## Usage Instructions: ${data.usage}
+  ## Installation: ${data.installation}
+  ## Reporting: ${data.reporting}
+  ## Contributing: ${data.contributing}
   ## Contributers: ${data.contributers}
   ## Testing: ${data.tests}
-  ## For any questions, check out my GitHub: 
+  ## Questions?
   https://github.com/${data.github}
-  Or contact me at this email: ${data.email}`
+  ${data.email}`
 }
 
 module.exports = generateMarkdown;
